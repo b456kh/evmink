@@ -30,7 +30,7 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
       - name: 编译exe
-        run: pyinstaller -F main.py
+        run: pyinstaller --hidden-import=eth_typing -F main.py
       - name: 上传exe
         uses: actions/upload-artifact@v3
         with:
